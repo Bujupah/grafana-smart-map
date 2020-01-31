@@ -1,0 +1,30 @@
+{
+    "type": "panel",
+    "name": "Smart Map Panel",
+    "id": "smart-map-panel",
+    "dataFormats": [],
+    "info": {
+      "description": "Smart Map Panel",
+      "author": {
+        "name": "Khalil Mejdi",
+        "url": "https://smart-etech.tn"
+      },
+      "keywords": ["Smart Map Panel"],
+      "logos": {
+        "small": "img/logo.png",
+        "large": "img/logo.png"
+      },
+      "links": [
+        {"name": "Website", "url": "https://smart-etech.tn"},
+        {"name": "License", "url": "https://smart-etech.tn/LICENSE"}
+      ],
+      "screenshots": [],
+      "version": "%VERSION%",
+      "updated": "%TODAY%"
+    },
+  
+    "dependencies": {
+      "grafanaVersion": "6.x.x",
+      "plugins": []
+    }
+  }
