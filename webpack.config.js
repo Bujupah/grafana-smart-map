@@ -38,6 +38,15 @@ module.exports = {
     
     rules: [
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+              name:'img/[name]_[hash:7].[ext]',
+          }
+        }]
+      },
+      {
         test: /\.tsx?$/, 
         loaders: [{loader: 'babel-loader',options: { presets: ['env'] },},'ts-loader',],
         exclude: /(node_modules)/,
@@ -51,5 +60,5 @@ module.exports = {
         use: [{loader: 'style-loader',},{loader: 'css-loader',options: {importLoaders: 1,sourceMap: true,},},],
       },
     ],
-  },
+  }, 
 };

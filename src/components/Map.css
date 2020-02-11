@@ -1,4 +1,25 @@
-.GrafanaSmartMap{
+@import url('https://unpkg.com/leaflet@1.6.0/dist/leaflet.css');
+@import url('https://unpkg.com/react-leaflet-markercluster/dist/styles.min.css');
+@import url('https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css');
+
+.g-smart-map{
     height: 100%;
     width: 100%;
+}
+.GrafanaSmartMapLabel{
+    width: 65%;
+}
+.GrafanaSmartMapLabel>gf-form-help-icon gf-form-help-icon--right-normal{
+    padding-left: 14px;
+}
+
+.GrafanaSmartMapSwitch{
+    padding: 3%;
+}
+.g-smart-map-rounded{
+    border-radius: 99px;
+}
+
+.g-smart-map-frame{
+    top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
 }
