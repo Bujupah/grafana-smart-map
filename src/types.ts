@@ -41,6 +41,7 @@ export interface MapOptions{
     viewport: Viewport,
     showFullscreen: boolean;
     showScaler: boolean;
+    datasourceConfig: any;
     markersApi: MapMarker;
     markerTemplate: MarkerTemplate;
     markersList: Reclamation[]
@@ -50,6 +51,10 @@ export const defaults: MapOptions = {
     tileLayer: defaultLayer,
     viewport: {center: [35.09,9.505], zoom: 6,},
     showFullscreen: false,
+    datasourceConfig: {
+        'useDB':true,
+        'useAPI': false,
+    },
     showScaler: false,
     markersApi: defaultMarker,
     markerTemplate: defaultPopupTemplate,

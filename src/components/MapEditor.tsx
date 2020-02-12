@@ -3,7 +3,7 @@ import { FormField, PanelOptionsGroup, Switch, Select, PanelOptionsGrid, Input, 
 import { PanelEditorProps, SelectableValue } from '@grafana/data';
 import { MapOptions, MapLayers, MapMarker, MarkerTemplate } from '../types';
 import { Viewport } from "react-leaflet";
-import { defaultMapLayersList } from './Map';
+import { defaultMapLayersList } from './Utils';
 import { Reclamation } from '../najda';
 
 interface State {
@@ -17,6 +17,7 @@ interface State {
     markerTemplate: MarkerTemplate;
     markersList: Reclamation[]
 
+    datasourceConfig: []
     // geoReverse:boolean;
     // geoReverseUrl:string;
     
@@ -41,6 +42,8 @@ export class MapEditor
             markerTemplate: props.options.markerTemplate,
 
             markersList: props.options.markersList,
+
+            datasourceConfig: props.options.datasourceConfig,
         };
 
     }
@@ -59,6 +62,8 @@ export class MapEditor
                 markerTemplate: this.state.markerTemplate,
                 
                 markersList: this.state.markersList,
+
+                datasourceConfig: this.state.datasourceConfig,
             }
         );
     }
@@ -81,6 +86,13 @@ export class MapEditor
     onMarkerPopUpTemplateChange = ({target}) => this.setState({markerTemplate: {popUpTemplate: target.value,latitudeTemplate: this.state.markerTemplate.latitudeTemplate,longitudeTemplate: this.state.markerTemplate.longitudeTemplate}})
     onMarkerLatitudeTemplateChange = ({target}) => this.setState({markerTemplate: {popUpTemplate: this.state.markerTemplate.popUpTemplate,latitudeTemplate: target.value,longitudeTemplate: this.state.markerTemplate.longitudeTemplate}})
     onMarkerLongitudeTemplateChange = ({target}) => this.setState({markerTemplate: {popUpTemplate: this.state.markerTemplate.popUpTemplate,latitudeTemplate: this.state.markerTemplate.latitudeTemplate,longitudeTemplate: target.value}})
+    
+    onDatasourceConfigChange = ({target}) => {
+        console.log(target.value);
+        this.setState({
+            datasourceConfig: []
+        });
+    }
     
     render() {
         const { viewport, showFullscreen, showScaler, tileLayer} = this.state;
